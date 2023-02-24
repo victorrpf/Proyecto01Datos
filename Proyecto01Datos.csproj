@@ -52,6 +52,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bd_telefonosDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="fmAcercade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmAcercade.designer.cs">
+      <DependentUpon>fmAcercade.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmAutomatico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fmAcercade.resx">
+      <DependentUpon>fmAcercade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fmAutomatico.resx">
       <DependentUpon>fmAutomatico.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +116,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="bd_telefonosDataSet.xsc">
       <DependentUpon>bd_telefonosDataSet.xsd</DependentUpon>
@@ -131,6 +141,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desarrollo-web.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

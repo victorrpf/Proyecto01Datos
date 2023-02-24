@@ -65,5 +65,12 @@ namespace Proyecto01Datos
         {
             this.Close();
         }
+
+        private void btAcercade_Click(object sender, EventArgs e)
+        {
+            fmAcercade fmAcerca = new fmAcercade();
+            fmAcerca.ShowDialog();
+            fmAcerca.Dispose();
+        }
     }
 }
