@@ -22,30 +22,6 @@ namespace Proyecto01Datos
             cbProvincias.SelectedIndex= 0;
         }
 
-        private void telefonosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.telefonosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bd_telefonosDataSet);
-
-        }
-
-        private void telefonosBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.telefonosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bd_telefonosDataSet);
-
-        }
-
-        private void telefonosBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.telefonosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bd_telefonosDataSet);
-
-        }
-
         private void fmConsultaFiltra_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bd_telefonosDataSet.telefonos' table. You can move, or remove it, as needed.

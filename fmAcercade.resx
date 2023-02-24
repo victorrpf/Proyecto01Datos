@@ -120,12 +120,10 @@
   <data name="textBox1.Text" xml:space="preserve">
     <value>Autor: Víctor Ramón Pardilla Fernández
 
-Proyecto: El Formulario
+Proyecto: Proyecto01Datos
 
-Fecha: Octubre 2022
+Fecha: Diciembre 2022
 
-Proyecto para practicar distintos controles, como botones, label, panel, groupbox en el formulario. Sus propiedades y eventos.
-
-</value>
+Vamos a practicar diferentes formas de acceso a datos en Visual Studio usando clases, componentes y objetos de .NET.</value>
   </data>
 </root>

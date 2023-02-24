@@ -18,14 +18,6 @@ namespace Proyecto01Datos
             InitializeComponent();
         }
 
-        private void telefonosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.telefonosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bd_telefonosDataSet);
-
-        }
-
         private void fmDefinitivo_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bd_telefonosDataSet.telefonos' table. You can move, or remove it, as needed.
@@ -89,8 +81,8 @@ namespace Proyecto01Datos
             }
             bindingNavigatorAddNewItem.Enabled = false; //Mientras se añade, si se
                                                         // vuelve a pulsar dará excepción, deshabilitado no se puede
-            nombreTextBox.Focus();
-            edicion = true;            
+            nombreTextBox.Focus(); //Focus en campo nombre
+            edicion = true; //Comproueba que haya cambios pendientes o no para preguntar si los guardamos
         }
 
         private void bindingNavigatorDeleteItem_MouseDown(object sender, MouseEventArgs e)

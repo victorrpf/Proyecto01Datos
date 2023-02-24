@@ -26,14 +26,6 @@ namespace Proyecto01Datos
 
         }
 
-        private void telefonosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.telefonosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bd_telefonosDataSet);
-
-        }
-
         private void MostrarPosicion()
         {
             int iTotal = telefonosBindingSource.Count; // Total elementos
