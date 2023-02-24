@@ -56,6 +56,7 @@
             this.btPorComandos.TabIndex = 1;
             this.btPorComandos.Text = "Por Comandos";
             this.btPorComandos.UseVisualStyleBackColor = true;
+            this.btPorComandos.Click += new System.EventHandler(this.btPorComandos_Click);
             // 
             // btAutomatico
             // 
@@ -66,41 +67,45 @@
             this.btAutomatico.TabIndex = 2;
             this.btAutomatico.Text = "Automático";
             this.btAutomatico.UseVisualStyleBackColor = true;
+            this.btAutomatico.Click += new System.EventHandler(this.btAutomatico_Click);
             // 
             // btDefinitivo
             // 
             this.btDefinitivo.AutoSize = true;
-            this.btDefinitivo.Location = new System.Drawing.Point(134, 180);
+            this.btDefinitivo.Location = new System.Drawing.Point(134, 172);
             this.btDefinitivo.Name = "btDefinitivo";
             this.btDefinitivo.Size = new System.Drawing.Size(182, 35);
             this.btDefinitivo.TabIndex = 3;
             this.btDefinitivo.Text = "Definitivo";
             this.btDefinitivo.UseVisualStyleBackColor = true;
+            this.btDefinitivo.Click += new System.EventHandler(this.btDefinitivo_Click);
             // 
             // btConsultas
             // 
             this.btConsultas.AutoSize = true;
-            this.btConsultas.Location = new System.Drawing.Point(134, 239);
+            this.btConsultas.Location = new System.Drawing.Point(134, 233);
             this.btConsultas.Name = "btConsultas";
             this.btConsultas.Size = new System.Drawing.Size(182, 35);
             this.btConsultas.TabIndex = 4;
             this.btConsultas.Text = "Consultas y Filtros";
             this.btConsultas.UseVisualStyleBackColor = true;
+            this.btConsultas.Click += new System.EventHandler(this.btConsultas_Click);
             // 
             // btSalir
             // 
             this.btSalir.AutoSize = true;
-            this.btSalir.Location = new System.Drawing.Point(134, 300);
+            this.btSalir.Location = new System.Drawing.Point(134, 293);
             this.btSalir.Name = "btSalir";
             this.btSalir.Size = new System.Drawing.Size(182, 35);
             this.btSalir.TabIndex = 5;
             this.btSalir.Text = "Salir";
             this.btSalir.UseVisualStyleBackColor = true;
+            this.btSalir.Click += new System.EventHandler(this.btSalir_Click);
             // 
             // btAcercade
             // 
             this.btAcercade.AutoSize = true;
-            this.btAcercade.Location = new System.Drawing.Point(134, 365);
+            this.btAcercade.Location = new System.Drawing.Point(134, 355);
             this.btAcercade.Name = "btAcercade";
             this.btAcercade.Size = new System.Drawing.Size(182, 35);
             this.btAcercade.TabIndex = 6;
@@ -111,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 453);
+            this.ClientSize = new System.Drawing.Size(473, 414);
             this.Controls.Add(this.btAcercade);
             this.Controls.Add(this.btSalir);
             this.Controls.Add(this.btConsultas);

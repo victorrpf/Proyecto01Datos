@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmComandos));
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.stEstado = new System.Windows.Forms.StatusStrip();
+            this.stEstadoItem0 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.laPosicion = new System.Windows.Forms.Label();
             this.btNuevo = new System.Windows.Forms.Button();
@@ -42,25 +42,12 @@
             this.laIdentificacion = new System.Windows.Forms.Label();
             this.btPrimero = new System.Windows.Forms.Button();
             this.tbIdentificacion = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.bd_telefonosDataSet = new Proyecto01Datos.bd_telefonosDataSet();
             this.telefonosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bd_telefonosDataSet = new Proyecto01Datos.bd_telefonosDataSet();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.telefonosTableAdapter = new Proyecto01Datos.bd_telefonosDataSetTableAdapters.telefonosTableAdapter();
             this.tableAdapterManager = new Proyecto01Datos.bd_telefonosDataSetTableAdapters.TableAdapterManager();
-            this.telefonosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.telefonosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.telefonosDataGridView = new System.Windows.Forms.DataGridView();
+            this.dgvTelefonos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,22 +56,28 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bd_telefonosDataSet)).BeginInit();
+            this.stEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.telefonosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.telefonosBindingNavigator)).BeginInit();
-            this.telefonosBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.telefonosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bd_telefonosDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonos)).BeginInit();
             this.SuspendLayout();
             // 
-            // statusStrip1
+            // stEstado
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 498);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(982, 22);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
+            this.stEstado.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.stEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stEstadoItem0});
+            this.stEstado.Location = new System.Drawing.Point(0, 498);
+            this.stEstado.Name = "stEstado";
+            this.stEstado.Size = new System.Drawing.Size(982, 22);
+            this.stEstado.TabIndex = 0;
+            this.stEstado.Text = "statusStrip1";
+            // 
+            // stEstadoItem0
+            // 
+            this.stEstadoItem0.Name = "stEstadoItem0";
+            this.stEstadoItem0.Size = new System.Drawing.Size(0, 16);
             // 
             // panel2
             // 
@@ -96,7 +89,7 @@
             // laPosicion
             // 
             this.laPosicion.AutoSize = true;
-            this.laPosicion.Location = new System.Drawing.Point(217, 17);
+            this.laPosicion.Location = new System.Drawing.Point(197, 17);
             this.laPosicion.Name = "laPosicion";
             this.laPosicion.Size = new System.Drawing.Size(50, 16);
             this.laPosicion.TabIndex = 6;
@@ -110,15 +103,17 @@
             this.btNuevo.TabIndex = 7;
             this.btNuevo.Text = "Nuevo";
             this.btNuevo.UseVisualStyleBackColor = true;
+            this.btNuevo.Click += new System.EventHandler(this.btNuevo_Click);
             // 
             // btSiguiente
             // 
-            this.btSiguiente.Location = new System.Drawing.Point(273, 13);
+            this.btSiguiente.Location = new System.Drawing.Point(275, 13);
             this.btSiguiente.Name = "btSiguiente";
-            this.btSiguiente.Size = new System.Drawing.Size(75, 25);
+            this.btSiguiente.Size = new System.Drawing.Size(81, 25);
             this.btSiguiente.TabIndex = 5;
             this.btSiguiente.Text = "Siguiente";
             this.btSiguiente.UseVisualStyleBackColor = true;
+            this.btSiguiente.Click += new System.EventHandler(this.btSiguiente_Click);
             // 
             // btGuardar
             // 
@@ -128,15 +123,17 @@
             this.btGuardar.TabIndex = 8;
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = true;
+            this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
             // btUltimo
             // 
-            this.btUltimo.Location = new System.Drawing.Point(354, 13);
+            this.btUltimo.Location = new System.Drawing.Point(363, 13);
             this.btUltimo.Name = "btUltimo";
             this.btUltimo.Size = new System.Drawing.Size(75, 25);
             this.btUltimo.TabIndex = 4;
             this.btUltimo.Text = "Último";
             this.btUltimo.UseVisualStyleBackColor = true;
+            this.btUltimo.Click += new System.EventHandler(this.btUltimo_Click);
             // 
             // btBorrar
             // 
@@ -146,15 +143,17 @@
             this.btBorrar.TabIndex = 9;
             this.btBorrar.Text = "Borrar";
             this.btBorrar.UseVisualStyleBackColor = true;
+            this.btBorrar.Click += new System.EventHandler(this.btBorrar_Click);
             // 
             // btAnterior
             // 
-            this.btAnterior.Location = new System.Drawing.Point(113, 13);
+            this.btAnterior.Location = new System.Drawing.Point(103, 13);
             this.btAnterior.Name = "btAnterior";
             this.btAnterior.Size = new System.Drawing.Size(75, 25);
             this.btAnterior.TabIndex = 3;
             this.btAnterior.Text = "Anterior";
             this.btAnterior.UseVisualStyleBackColor = true;
+            this.btAnterior.Click += new System.EventHandler(this.btAnterior_Click);
             // 
             // laIdentificacion
             // 
@@ -167,21 +166,33 @@
             // 
             // btPrimero
             // 
-            this.btPrimero.Location = new System.Drawing.Point(32, 13);
+            this.btPrimero.Location = new System.Drawing.Point(21, 13);
             this.btPrimero.Name = "btPrimero";
             this.btPrimero.Size = new System.Drawing.Size(75, 25);
             this.btPrimero.TabIndex = 2;
             this.btPrimero.Text = "Primero";
             this.btPrimero.UseVisualStyleBackColor = true;
+            this.btPrimero.Click += new System.EventHandler(this.btPrimero_Click);
             // 
             // tbIdentificacion
             // 
+            this.tbIdentificacion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.telefonosBindingSource, "id", true));
             this.tbIdentificacion.Enabled = false;
             this.tbIdentificacion.Location = new System.Drawing.Point(872, 13);
             this.tbIdentificacion.Name = "tbIdentificacion";
             this.tbIdentificacion.Size = new System.Drawing.Size(67, 22);
             this.tbIdentificacion.TabIndex = 11;
             this.tbIdentificacion.Text = "1";
+            // 
+            // telefonosBindingSource
+            // 
+            this.telefonosBindingSource.DataMember = "telefonos";
+            this.telefonosBindingSource.DataSource = this.bd_telefonosDataSet;
+            // 
+            // bd_telefonosDataSet
+            // 
+            this.bd_telefonosDataSet.DataSetName = "bd_telefonosDataSet";
+            this.bd_telefonosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -202,16 +213,6 @@
             this.panel1.Size = new System.Drawing.Size(982, 46);
             this.panel1.TabIndex = 1;
             // 
-            // bd_telefonosDataSet
-            // 
-            this.bd_telefonosDataSet.DataSetName = "bd_telefonosDataSet";
-            this.bd_telefonosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // telefonosBindingSource
-            // 
-            this.telefonosBindingSource.DataMember = "telefonos";
-            this.telefonosBindingSource.DataSource = this.bd_telefonosDataSet;
-            // 
             // telefonosTableAdapter
             // 
             this.telefonosTableAdapter.ClearBeforeFill = true;
@@ -222,137 +223,12 @@
             this.tableAdapterManager.telefonosTableAdapter = this.telefonosTableAdapter;
             this.tableAdapterManager.UpdateOrder = Proyecto01Datos.bd_telefonosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // telefonosBindingNavigator
+            // dgvTelefonos
             // 
-            this.telefonosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.telefonosBindingNavigator.BindingSource = this.telefonosBindingSource;
-            this.telefonosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.telefonosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.telefonosBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.telefonosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.telefonosBindingNavigatorSaveItem});
-            this.telefonosBindingNavigator.Location = new System.Drawing.Point(0, 46);
-            this.telefonosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.telefonosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.telefonosBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.telefonosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.telefonosBindingNavigator.Name = "telefonosBindingNavigator";
-            this.telefonosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.telefonosBindingNavigator.Size = new System.Drawing.Size(982, 27);
-            this.telefonosBindingNavigator.TabIndex = 2;
-            this.telefonosBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // telefonosBindingNavigatorSaveItem
-            // 
-            this.telefonosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.telefonosBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("telefonosBindingNavigatorSaveItem.Image")));
-            this.telefonosBindingNavigatorSaveItem.Name = "telefonosBindingNavigatorSaveItem";
-            this.telefonosBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
-            this.telefonosBindingNavigatorSaveItem.Text = "Guardar datos";
-            this.telefonosBindingNavigatorSaveItem.Click += new System.EventHandler(this.telefonosBindingNavigatorSaveItem_Click);
-            // 
-            // telefonosDataGridView
-            // 
-            this.telefonosDataGridView.AutoGenerateColumns = false;
-            this.telefonosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.telefonosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTelefonos.AllowUserToAddRows = false;
+            this.dgvTelefonos.AutoGenerateColumns = false;
+            this.dgvTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTelefonos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -361,14 +237,15 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
-            this.telefonosDataGridView.DataSource = this.telefonosBindingSource;
-            this.telefonosDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.telefonosDataGridView.Location = new System.Drawing.Point(0, 80);
-            this.telefonosDataGridView.Name = "telefonosDataGridView";
-            this.telefonosDataGridView.RowHeadersWidth = 51;
-            this.telefonosDataGridView.RowTemplate.Height = 24;
-            this.telefonosDataGridView.Size = new System.Drawing.Size(982, 418);
-            this.telefonosDataGridView.TabIndex = 3;
+            this.dgvTelefonos.DataSource = this.telefonosBindingSource;
+            this.dgvTelefonos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTelefonos.Location = new System.Drawing.Point(0, 46);
+            this.dgvTelefonos.Name = "dgvTelefonos";
+            this.dgvTelefonos.RowHeadersWidth = 51;
+            this.dgvTelefonos.RowTemplate.Height = 24;
+            this.dgvTelefonos.Size = new System.Drawing.Size(982, 452);
+            this.dgvTelefonos.TabIndex = 3;
+            this.dgvTelefonos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefonos_CellEnter);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -439,21 +316,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 520);
-            this.Controls.Add(this.telefonosDataGridView);
-            this.Controls.Add(this.telefonosBindingNavigator);
+            this.Controls.Add(this.dgvTelefonos);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.stEstado);
             this.Name = "fmComandos";
-            this.Text = "fmComandos";
+            this.Text = "Comandos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fmComandos_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.stEstado.ResumeLayout(false);
+            this.stEstado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.telefonosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bd_telefonosDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bd_telefonosDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.telefonosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.telefonosBindingNavigator)).EndInit();
-            this.telefonosBindingNavigator.ResumeLayout(false);
-            this.telefonosBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.telefonosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,7 +337,7 @@
 
         #endregion
 
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip stEstado;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label laPosicion;
         private System.Windows.Forms.Button btNuevo;
@@ -478,20 +354,7 @@
         private System.Windows.Forms.BindingSource telefonosBindingSource;
         private bd_telefonosDataSetTableAdapters.telefonosTableAdapter telefonosTableAdapter;
         private bd_telefonosDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator telefonosBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton telefonosBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView telefonosDataGridView;
+        private System.Windows.Forms.DataGridView dgvTelefonos;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -500,5 +363,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.ToolStripStatusLabel stEstadoItem0;
     }
 }

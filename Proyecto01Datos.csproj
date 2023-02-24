@@ -52,11 +52,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bd_telefonosDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="fmAutomatico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmAutomatico.Designer.cs">
+      <DependentUpon>fmAutomatico.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmComandos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fmComandos.Designer.cs">
       <DependentUpon>fmComandos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmConsultaFiltra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmConsultaFiltra.Designer.cs">
+      <DependentUpon>fmConsultaFiltra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmDefinitivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmDefinitivo.Designer.cs">
+      <DependentUpon>fmDefinitivo.cs</DependentUpon>
     </Compile>
     <Compile Include="fmPrincipal.cs">
       <SubType>Form</SubType>
@@ -66,8 +84,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fmAutomatico.resx">
+      <DependentUpon>fmAutomatico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fmComandos.resx">
       <DependentUpon>fmComandos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmConsultaFiltra.resx">
+      <DependentUpon>fmConsultaFiltra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmDefinitivo.resx">
+      <DependentUpon>fmDefinitivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmPrincipal.resx">
       <DependentUpon>fmPrincipal.cs</DependentUpon>
