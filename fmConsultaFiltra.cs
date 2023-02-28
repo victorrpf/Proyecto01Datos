@@ -76,29 +76,31 @@ namespace Proyecto01Datos
         {
             if (ckProvincia.Checked)
             {
-                gbLetras.Enabled = false;
-                gbCiudad.Enabled = false;
+                habilita(gbProvincias, false);
                 telefonosBindingSource.Filter = "provincia ='" + cbProvincias.Text + "'";
             }
             else if(ckLetra.Checked)
             {
-                gbProvincias.Enabled = false;
-                gbCiudad.Enabled = false;
+                habilita(gbLetras, false);
                 telefonosBindingSource.Filter = "nombre like'" + cbLetra.Text + "%'";
             }
             else if(ckCiudad.Checked)
             {
-                gbProvincias.Enabled = false;
-                gbLetras.Enabled = false;
+                habilita(gbCiudad, false);
                 telefonosBindingSource.Filter = "ciudad ='" + cbCiudad.Text + "'";
             }
             else
             {
-                gbProvincias.Enabled = true;
-                gbLetras.Enabled = true;
-                gbCiudad.Enabled = true;
+                habilita(gbProvincias, true);
                 telefonosBindingSource.RemoveFilter();
             }
+        }
+
+        private void habilita(GroupBox boxEnabled, bool habilitarGroupBox)
+
+        {
+            gbCiudad.Enabled = gbLetras.Enabled = gbProvincias.Enabled = habilitarGroupBox;
+            boxEnabled.Enabled = true;
         }
     }
 }
