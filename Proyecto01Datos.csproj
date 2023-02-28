@@ -145,5 +145,10 @@
   <ItemGroup>
     <None Include="Resources\desarrollo-web.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="datos\bd_telefonos.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
